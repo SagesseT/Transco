@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 24 avr. 2025 à 00:21
+-- Généré le : dim. 04 mai 2025 à 01:35
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   `date_deconnexion` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `connexion`
@@ -126,9 +126,14 @@ INSERT INTO `connexion` (`id`, `matricule`, `compte_utilisateur`, `role_id`, `da
 (46, '100035', 'gest', 'GS', '2025-04-23 15:38:13', 'Hors ligne', '2025-04-23 22:46:16'),
 (47, '100035', 'gest', 'GS', '2025-04-23 20:01:22', 'Hors ligne', '2025-04-23 22:46:16'),
 (48, '100010', 'test1', 'Admin', '2025-04-23 20:46:23', 'Hors ligne', '2025-04-23 22:30:54'),
-(49, '100035', 'gest', 'GS', '2025-04-23 20:31:04', 'Hors ligne', NULL),
-(50, '100010', 'test1', 'Admin', '2025-04-24 00:19:57', 'Hors ligne', NULL),
-(51, '100035', 'gest', 'GS', '2025-04-24 00:20:09', 'Hors ligne', NULL);
+(49, '100035', 'gest', 'GS', '2025-04-23 20:31:04', 'Hors ligne', '2025-04-24 18:01:40'),
+(50, '100010', 'test1', 'Admin', '2025-04-24 00:19:57', 'Hors ligne', '2025-04-24 18:05:15'),
+(51, '100035', 'gest', 'GS', '2025-04-24 00:20:09', 'Hors ligne', '2025-04-24 18:01:40'),
+(52, '100010', 'test1', 'Admin', '2025-04-24 16:01:56', 'Hors ligne', '2025-04-24 18:05:15'),
+(53, '770051', 'Irtfttamfutu@gmail.com', 'Admin', '2025-04-24 16:05:53', 'Hors ligne', '2025-04-24 18:16:46'),
+(54, '100035', 'gest', 'GS', '2025-04-24 16:19:02', 'Hors ligne', '2025-04-24 18:20:27'),
+(55, '100035', 'gest', 'GS', '2025-04-24 16:30:34', 'Hors ligne', '2025-04-24 18:38:50'),
+(56, '100010', 'test1', 'Admin', '2025-05-04 01:35:24', 'Hors ligne', NULL);
 
 -- --------------------------------------------------------
 
@@ -675,10 +680,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`num`, `matricule`, `nom`, `postnom`, `prenom`, `compte_utilisateur`, `mot_de_passe`, `fonction_id`, `grade_id`, `role_id`, `date`) VALUES
-(10, 100010, 'test1', 'test1', 'test1', 'test1', '$2y$10$.8//hp9maf/YKWYssJEXVu.FUO3sf6Ll3ZpSegB6IkuDpURFK3JFq', 'CSI', 'C7', 'Admin', '2025-03-23 15:10:35'),
-(15, 100012, 'tata', 'tata', 'tata', 'tata', '$2y$10$BPqgDRyFlgS/vbKnDTtF9e5PXnBov.4DZM7GzHo6PNg7rEKuDMYF6', 'CSI', 'CBSB', 'Admin', '2025-04-01 10:10:53'),
-(16, 100035, 'GEST', 'GEST', 'GEST', 'gest', '$2y$10$GWB2jcBuG2Nze7NmNKVLguLQr/NFYmijg0FiRbh1IQcgBO6KdplFu', 'CSI', 'C7', 'GS', '2025-04-03 06:32:49'),
-(17, 776544, 'MANGA', 'MANGA', 'MANGA', 'manga', '$2y$10$o/A9GYiXABH4.SF7mwOkxeKoFSigNDyrUicioWsyKNQREEqqDgN5K', 'CSIA', 'CSSB', 'GS', '2025-04-18 00:01:40');
+(10, 100010, 'test1', 'test1', 'test1', 'test1', '$2y$10$.8//hp9maf/YKWYssJEXVu.FUO3sf6Ll3ZpSegB6IkuDpURFK3JFq', 'CSI', 'C7', 'Admin', '2025-03-23 14:10:35'),
+(15, 100012, 'tata', 'tata', 'tata', 'tata', '$2y$10$BPqgDRyFlgS/vbKnDTtF9e5PXnBov.4DZM7GzHo6PNg7rEKuDMYF6', 'CSI', 'CBSB', 'Admin', '2025-04-01 08:10:53'),
+(16, 100035, 'GEST', 'GEST', 'GEST', 'gest', '$2y$10$GWB2jcBuG2Nze7NmNKVLguLQr/NFYmijg0FiRbh1IQcgBO6KdplFu', 'CSI', 'C7', 'GS', '2025-04-03 04:32:49'),
+(17, 776544, 'MANGA', 'MANGA', 'MANGA', 'manga', '$2y$10$o/A9GYiXABH4.SF7mwOkxeKoFSigNDyrUicioWsyKNQREEqqDgN5K', 'CSIA', 'CSSB', 'GS', '2025-04-17 22:01:40');
 
 --
 -- Contraintes pour les tables déchargées
