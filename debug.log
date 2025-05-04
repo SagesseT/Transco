@@ -1,0 +1,7 @@
+[0409/095143.681:ERROR:crashpad_client_win.cc(188)] crash server did not respond, self-terminating
+[0409/105432.168:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0409/105442.004:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0409/105450.093:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0409/105457.333:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0409/105504.582:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0409/105512.585:ERROR:registration_protocol_win.cc(108)] CreateFile: Le fichier spécifié est introuvable. (0x2)
