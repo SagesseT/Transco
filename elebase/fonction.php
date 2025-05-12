@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer_fonction'])
         echo "<div class='alert alert-danger'>Erreur : " . mysqli_error($conn) . "</div>";
     }
 }
-
 // Préparer la modification d'une fonction
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['modifier_fonction'])) {
     $id_modifier = mysqli_real_escape_string($conn, $_GET['modifier_fonction']);
