@@ -13,6 +13,10 @@ $id_service_edit = "";
 $id_ligne_edit = "";
 $code_service_edit = "";
 $nom_service_edit = "";
+// Pagination
+$limit = 25;
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
 
 // Ajouter un nouveau service
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_service'])) {
@@ -84,10 +88,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifier_service'])) 
         echo "<div class='alert alert-danger'>Veuillez remplir tous les champs.</div>";
     }
 }
+// Nombre total de services
+$total_query = "SELECT COUNT(*) as total FROM services";
+$total_result = mysqli_query($conn, $total_query);
+$total_row = mysqli_fetch_assoc($total_result);
+$total_services = $total_row['total'];
+$total_pages = ceil($total_services / $limit);
 
-// Récupérer tous les services
-$services_query = "SELECT * FROM services";
+// Récupérer les services paginés
+$services_query = "SELECT * FROM services LIMIT $limit OFFSET $offset";
 $services_result = mysqli_query($conn, $services_query);
+
 ?>
 
 <!DOCTYPE html>
@@ -193,6 +204,19 @@ $services_result = mysqli_query($conn, $services_query);
                             <?php endwhile; ?>
                         </tbody>
                     </table>
+                    <?php if ($total_pages > 1): ?>
+                    <nav>
+                        <ul class="pagination justify-content-center mt-3">
+                            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                <li class="page-item <?php if ($i == $page) echo 'active'; ?>">
+                                    <a class="page-link" href="?page=<?php echo $i; ?>">
+                                        <?php echo $i; ?>
+                                    </a>
+                                </li>
+                            <?php endfor; ?>
+                        </ul>
+                    </nav>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
