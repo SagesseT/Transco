@@ -6,6 +6,14 @@ $username = 'root';
 $password = '';
 $database = 'Transcotb';
 
+// ChatGPT API configuration
+if (!defined('CHATGPT_API_KEY')) {
+    define('CHATGPT_API_KEY', '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');
+}
+if (!defined('CHATGPT_API_URL')) {
+    define('CHATGPT_API_URL', 'https://api.openai.com/v1/chat/completions');
+}
+
 // Create a connection
 $conn = new mysqli($host, $username, $password, $database);
 
