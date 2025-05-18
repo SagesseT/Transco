@@ -28,11 +28,7 @@ if (!isset($_SESSION["compte_utilisateur"])) {
             Votre fonction n'est pas définie.
         <?php endif; ?>
     </p>
-    <!-- ChatGPT Interaction Form -->
-    <form method="POST" class="text-center mt-4">
-        <textarea name="user_input" rows="4" cols="50" placeholder="Posez votre question ici..."></textarea><br>
-        <button type="submit" class="btn btn-primary mt-2">Envoyer</button>
-    </form>
+
 
 <?php if (!empty($response)): ?>
         <div class="mt-4">
