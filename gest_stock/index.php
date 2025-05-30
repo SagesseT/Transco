@@ -9,7 +9,6 @@ if (!isset($_SESSION["compte_utilisateur"])) {
 }
 require "header.php";
 
-
 // Récupérer les statistiques de stock
 $sql_stock = "SELECT td.nom, SUM(s.quantite) as total 
                FROM stock s 
