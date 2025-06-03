@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <input type="number" class="form-control" id="num_tickets_retour" name="num_tickets_retour" required>
         </div>
         <div class="mb-3">
-            <label for="tr" class="form-label">TR</label>
+            <label for="tr" class="form-label">Tickets Retournés</label>
             <input type="number" class="form-control" id="tr" name="tr" required>
         </div>
         <div class="mb-3">
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <input type="number" class="form-control" id="total_tickets" name="total_tickets" readonly>
         </div>
         <div class="mb-3">
-            <label for="tv" class="form-label">TV</label>
+            <label for="tv" class="form-label">Tickets Vendus</label>
             <input type="number" class="form-control" id="tv" name="tv" readonly>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>

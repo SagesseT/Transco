@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
 
         <div class="mb-3">
-            <label for="tr" class="form-label">TR</label>
+            <label for="tr" class="form-label">Tickets Retournés</label>
             <input type="number" class="form-control" id="tr" name="tr" 
                    value="<?php echo $affectation['tr']; ?>" required>
         </div>
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
 
         <div class="mb-3">
-            <label for="tv" class="form-label">TV</label>
+            <label for="tv" class="form-label">Tickets Vendus</label>
             <input type="number" class="form-control" id="tv" name="tv" 
                    value="<?php echo $affectation['tv']; ?>" readonly>
         </div>
