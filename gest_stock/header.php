@@ -50,54 +50,54 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-<!-- Nav Item - Dashboard -->
-<li class="nav-item">
-    <a class="nav-link" href="index.php">
-        <i class="bi bi-speedometer2"></i> <!-- Changed icon -->
-        <span>Tableau de bord</span></a>
-</li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">
+                    <i class="bi bi-speedometer2"></i> <!-- Changed icon -->
+                    <span>Tableau de bord</span></a>
+            </li>
 
-<!-- Nav Item - Gestion des stocks -->
-<li class="nav-item">
-    <a class="nav-link" href="stock.php">
-        <i class="bi bi-box-seam"></i> <!-- Changed icon -->
-        <span>Gestion des stocks</span></a>
-</li>
+            <!-- Nav Item - Gestion des stocks -->
+            <li class="nav-item">
+                <a class="nav-link" href="stock.php">
+                    <i class="bi bi-box-seam"></i> <!-- Changed icon -->
+                    <span>Gestion des stocks</span></a>
+            </li>
 
-<!-- Nav Item - Mouvements -->
-<li class="nav-item">
-    <a class="nav-link" href="mouvements.php">
-        <i class="bi bi-arrow-left-right"></i> <!-- Changed icon -->
-        <span>Mouvements</span></a>
-</li>
+            <!-- Nav Item - Mouvements -->
+            <li class="nav-item">
+                <a class="nav-link" href="mouvements.php">
+                    <i class="bi bi-arrow-left-right"></i> <!-- Changed icon -->
+                    <span>Mouvements</span></a>
+            </li>
 
-<!-- Nav Item - Registre d'Affectation -->
-<li class="nav-item">
-    <a class="nav-link" href="affectation.php">
-        <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-        <span>Registre d'Affectation et de retour tickets</span></a>
-</li>
+            <!-- Nav Item - Registre d'Affectation -->
+            <li class="nav-item">
+                <a class="nav-link" href="affectation.php">
+                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
+                    <span>Registre d'Affectation et de retour tickets</span></a>
+            </li>
 
-<!-- Nav Item - Registre d'Affectation -->
-<li class="nav-item">
-    <a class="nav-link" href="affectations_list.php">
-        <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-        <span>Historique d'Affectation et de retour tickets</span></a>
-</li>
+            <!-- Nav Item - Registre d'Affectation -->
+            <li class="nav-item">
+                <a class="nav-link" href="affectations_list.php">
+                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
+                    <span>Historique d'Affectation et de retour tickets</span></a>
+            </li>
 
-<!-- Nav Item - Ajouter une affectation -->
-<li class="nav-item">
-    <a class="nav-link" href="ajouter_affectation.php">
-        <i class="bi bi-plus-circle"></i> <!-- Changed icon -->
-        <span>Ajouter une affectation</span></a>
-</li>
+            <!-- Nav Item - Ajouter une affectation -->
+            <li class="nav-item">
+                <a class="nav-link" href="ajouter_affectation.php">
+                    <i class="bi bi-plus-circle"></i> <!-- Changed icon -->
+                    <span>Ajouter une affectation</span></a>
+            </li>
 
-<!-- Nav Item - Deconnection -->
-<li class="nav-item">
-    <a class="nav-link" href="../config/logout.php">
-        <i class="bi bi-box-arrow-right"></i> <!-- Changed icon -->
-        <span>Deconnection</span></a>
-</li>
+            <!-- Nav Item - Deconnection -->
+            <li class="nav-item">
+                <a class="nav-link" href="../config/logout.php">
+                    <i class="bi bi-box-arrow-right"></i> <!-- Changed icon -->
+                    <span>Deconnection</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
