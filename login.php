@@ -128,13 +128,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <label class="form-check-label" for="inputRememberPassword">Se souvenir du mot de passe</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Mot de passe oublié?</a>
                                             <button class="btn btn-primary" type="submit">Connexion</button>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.html">Besoin d'un compte? Inscrivez-vous!</a></div>
                                 </div>
                             </div>
                         </div>
