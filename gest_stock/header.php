@@ -71,27 +71,6 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
                     <span>Mouvements</span></a>
             </li>
 
-            <!-- Nav Item - Registre d'Affectation -->
-            <li class="nav-item">
-                <a class="nav-link" href="affectation.php">
-                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-                    <span>Registre d'Affectation et de retour tickets</span></a>
-            </li>
-
-            <!-- Nav Item - Registre d'Affectation -->
-            <li class="nav-item">
-                <a class="nav-link" href="affectations_list.php">
-                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-                    <span>Historique d'Affectation et de retour tickets</span></a>
-            </li>
-
-            <!-- Nav Item - Ajouter une affectation -->
-            <li class="nav-item">
-                <a class="nav-link" href="ajouter_affectation.php">
-                    <i class="bi bi-plus-circle"></i> <!-- Changed icon -->
-                    <span>Ajouter une affectation</span></a>
-            </li>
-
             <!-- Nav Item - Deconnection -->
             <li class="nav-item">
                 <a class="nav-link" href="../config/logout.php">
