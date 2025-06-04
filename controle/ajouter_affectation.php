@@ -100,20 +100,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
 <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
     <div class="alert alert-success"> Affectation enregistrée avec succès.</div>
 <?php endif; ?>
 
+<link href="../css/ajaffectation.css" rel="stylesheet">
 <div class="container mt-5">
-    <h2 class="text-center">Ajouter une Nouvelle Affectation</h2>
+    <div class="form-title">Ajouter une Nouvelle Affectation</div>
     <form method="post" action="controle/ajouter_affectation.php">
-        <div class="mb-3">
-            <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" name="ddate" value="<?php echo isset($_GET['date_filter']) ? htmlspecialchars($_GET['date_filter']) : date('Y-m-d'); ?>" required>
-        </div>
-
-        <!-- Ligne - Sélectionner depuis la base de données -->
-        <div class="mb-3">
+        <div class="row">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" name="ddate" value="<?php echo isset($_GET['date_filter']) ? htmlspecialchars($_GET['date_filter']) : date('Y-m-d'); ?>" required>
+            </div>
+            <div class="mb-3">
             <label for="ligne" class="form-label">Ligne</label>
             <select class="form-select" id="ligne" name="ligne" required>
                 <option value="">Sélectionner une ligne...</option>
@@ -122,46 +123,52 @@ document.addEventListener('DOMContentLoaded', function () {
                 <?php endwhile; ?>
             </select>
         </div>
-
-        <!-- Service - Sera mis à jour dynamiquement -->
-        <div class="mb-3">
-            <label for="service" class="form-label">Service</label>
-            <select class="form-select" id="service" name="service" required>
-                <option value="">Sélectionner un service...</option>
-            </select>
         </div>
-
-        <!-- Autres champs pour Feuille de Route, Série, etc. -->
-        <div class="mb-3">
-            <label for="fr" class="form-label">Feuille de Route</label>
-            <input type="text" class="form-control" id="fr" name="fr" required>
+        <div class="row">
+            <div class="mb-3">
+                <label for="service" class="form-label">Service</label>
+                <select class="form-select" id="service" name="service" required>
+                    <option value="">Sélectionner un service...</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="fr" class="form-label">Feuille de Route</label>
+                <input type="text" class="form-control" id="fr" name="fr" required>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="serie" class="form-label">Série</label>
-            <input type="text" class="form-control" id="serie" name="serie" required>
+        <div class="row">
+            <div class="mb-3">
+                <label for="serie" class="form-label">Série</label>
+                <input type="text" class="form-control" id="serie" name="serie" required>
+            </div>
+            <div class="mb-3">
+                <label for="num_tickets_donner" class="form-label">N° Tickets Donnés</label>
+                <input type="number" class="form-control" id="num_tickets_donner" name="num_tickets_donner" required>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="num_tickets_donner" class="form-label">Numéro de Tickets Donnés</label>
-            <input type="number" class="form-control" id="num_tickets_donner" name="num_tickets_donner" required>
+        <div class="row">
+            <div class="mb-3">
+                <label for="num_tickets_retour" class="form-label">N° Tickets Retournés</label>
+                <input type="number" class="form-control" id="num_tickets_retour" name="num_tickets_retour" required>
+            </div>
+            <div class="mb-3">
+                <label for="tr" class="form-label">Tickets Retournés</label>
+                <input type="number" class="form-control" id="tr" name="tr" required>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="num_tickets_retour" class="form-label">Numéro de Tickets Retournés</label>
-            <input type="number" class="form-control" id="num_tickets_retour" name="num_tickets_retour" required>
-        </div>
-        <div class="mb-3">
-            <label for="tr" class="form-label">Tickets Retournés</label>
-            <input type="number" class="form-control" id="tr" name="tr" required>
-        </div>
-        <div class="mb-3">
-            <label for="total_tickets" class="form-label">Total Tickets</label>
-            <input type="number" class="form-control" id="total_tickets" name="total_tickets" readonly>
-        </div>
-        <div class="mb-3">
-            <label for="tv" class="form-label">Tickets Vendus</label>
-            <input type="number" class="form-control" id="tv" name="tv" readonly>
+        <div class="row">
+            <div class="mb-3">
+                <label for="total_tickets" class="form-label">Total Tickets</label>
+                <input type="number" class="form-control" id="total_tickets" name="total_tickets" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="tv" class="form-label">Tickets Vendus</label>
+                <input type="number" class="form-control" id="tv" name="tv" readonly>
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="reset" class="btn btn-secondary">Annuler</button>
     </form>
 </div>
-
+<!-- ...existing code... -->
 <?php require "footer.php"; ?>
