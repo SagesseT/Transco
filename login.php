@@ -123,10 +123,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <input class="form-control" name="mot_de_passe" id="inputPassword" type="password" placeholder="Password" required />
                                             <label for="inputPassword">Mot de passe</label>
                                         </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                            <label class="form-check-label" for="inputRememberPassword">Se souvenir du mot de passe</label>
+<div class="mb-3">
+    <input type="checkbox" id="showPassword" onclick="togglePassword()" />
+    <label for="showPassword">Afficher le mot de passe</label>
                                         </div>
+
+                                        <script>
+                                        function togglePassword() {
+                                            const pwd = document.getElementById('inputPassword');
+                                            pwd.type = pwd.type === 'password' ? 'text' : 'password';
+                                        }
+                                        </script>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-primary" type="submit">Connexion</button>
                                         </div>
