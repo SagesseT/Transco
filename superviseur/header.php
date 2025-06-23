@@ -63,6 +63,11 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
                     <i class="bi bi-journal-text"></i> <!-- Changed icon -->
                     <span>Registre d'Affectation et de retour tickets</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="affectation.php">
+                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
+                    <span>Registre d'Affectation et de retour tickets</span></a>
+            </li>
 
             <!-- Nav Item - Registre d'Affectation -->
             <li class="nav-item">
