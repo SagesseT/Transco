@@ -60,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header("Location: rapprochement/index.php");
                             break;
                         case 'CSSB':
-                            header("Location: accueil.php");
+                            header("");
                             break;
                         default:
                             // Si le rôle n'est pas trouvé, redirigez vers la page par défaut
-                            header("Location: accueil.php");
+                            header("Location: index.php");
                             break;
                     }
                     exit();

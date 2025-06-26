@@ -139,22 +139,69 @@ document.addEventListener('DOMContentLoaded', function () {
     // Événement pour charger les services lorsqu'une ligne est sélectionnée
     ligneSelect.addEventListener('change', function() {
         loadServices(this.value);
+                // ...existing code...
+        
+        // Charger les services au chargement de la page avec la valeur sélectionnée
+        document.addEventListener('DOMContentLoaded', function () {
+            // ...votre code existant...
+        
+            // Ajoutez ceci à la fin du DOMContentLoaded :
+            loadServices(
+                ligneSelect.value,
+                <?php echo json_encode($affectation['services_id_service']); ?>
+            );
+        });
+        
+        // Modifiez la fonction loadServices pour accepter un service sélectionné :
+        function loadServices(ligneId, selectedServiceId = null) {
+            serviceSelect.innerHTML = '<option value="">Sélectionner un service...</option>';
+            if (!ligneId) return;
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_services.php?ligne_id=' + ligneId, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const services = JSON.parse(xhr.responseText);
+                    if (services.length > 0) {
+                        services.forEach(service => {
+                            const option = document.createElement('option');
+                            option.value = service.id_service;
+                            option.textContent = service.nom_service;
+                            if (selectedServiceId && service.id_service == selectedServiceId) {
+                                option.selected = true;
+                            }
+                            serviceSelect.appendChild(option);
+                        });
+                    } else {
+                        const option = document.createElement('option');
+                        option.textContent = 'Aucun service disponible';
+                        serviceSelect.appendChild(option);
+                    }
+                } else {
+                    alert('Erreur lors du chargement des services.');
+                }
+            };
+            xhr.send();
+        }
     });
 });
 </script>
 
-<div class="container mt-5">
-    <h3>Modifier le affectation</h3>
-    <form method="POST">
-        <div class="row">
-        <div class="mb-3">
-            <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" name="ddate" 
-                   value="<?php echo htmlspecialchars($affectation['ddate']); ?>" required>
-        </div>
 
-        <!-- Ligne -->
-        <div class="mb-3">
+<?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+    <div class="alert alert-success"> Affectation Modifier avec succès.</div>
+<?php endif; ?>
+
+<link href="../css/ajaffectation.css" rel="stylesheet">
+<div class="container mt-5">
+    <div class="form-title">Modifier l'Affectation</div>
+        <form method="post" action="modifier_affectation.php?id=<?php echo $id_affectation; ?>"><form method="post" action="affectations_list.php">
+        <div class="row">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+               <input type="date" class="form-control" name="ddate" 
+                   value="<?php echo htmlspecialchars($affectation['ddate']); ?>" required>
+            </div>
+            <div class="mb-3">
             <label for="ligne" class="form-label">Ligne</label>
             <select class="form-select" id="ligne" name="ligne" required>
                 <option value="">Sélectionner une ligne...</option>
@@ -166,57 +213,56 @@ document.addEventListener('DOMContentLoaded', function () {
                 <?php endwhile; ?>
             </select>
         </div>
-
-        <!-- Service - Sera mis à jour dynamiquement -->
-        <div class="mb-3">
-            <label for="service" class="form-label">Service</label>
-            <select class="form-select" id="service" name="service" required>
-                <option value="">Sélectionner un service...</option>
-            </select>
         </div>
-
-        <div class="mb-3">
-            <label for="fr" class="form-label">Feuille de Route</label>
-            <input type="text" class="form-control" id="fr" name="fr" 
+        <div class="row">
+            <div class="mb-3">
+                <label for="service" class="form-label">Service</label>
+                <select class="form-select" id="service" name="service" required>
+                    <option value="">Sélectionner un service...</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="fr" class="form-label">Feuille de Route</label>
+                <input type="text" class="form-control" id="fr" name="fr" 
                    value="<?php echo htmlspecialchars($affectation['fr']); ?>" required>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="serie" class="form-label">Série</label>
-            <input type="text" class="form-control" id="serie" name="serie" 
-                   value="<?php echo htmlspecialchars($affectation['series']); ?>" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="num_tickets_donner" class="form-label">Numéro de Tickets Donnés</label>
-            <input type="number" class="form-control" id="num_tickets_donner" name="num_tickets_donner" 
+        <div class="row">
+            <div class="mb-3">
+                <label for="serie" class="form-label">Série</label>
+                <input type="text" class="form-control" id="serie" name="serie" 
+                   value="<?php echo htmlspecialchars($affectation['series']); ?>" required>            
+            </div>
+            <div class="mb-3">
+                <label for="num_tickets_donner" class="form-label">N° Tickets Donnés</label>
+                <input type="number" class="form-control" id="num_tickets_donner" name="num_tickets_donner" 
                    value="<?php echo $affectation['num_tickets_donner']; ?>" required>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="num_tickets_retour" class="form-label">Numéro de Tickets Retournés</label>
-            <input type="number" class="form-control" id="num_tickets_retour" name="num_tickets_retour" 
+        <div class="row">
+            <div class="mb-3">
+                <label for="num_tickets_retour" class="form-label">N° Tickets Retournés</label>
+                <input type="number" class="form-control" id="num_tickets_retour" name="num_tickets_retour" 
                    value="<?php echo $affectation['num_tickets_retour']; ?>" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="tr" class="form-label">Tickets Retournés</label>
-            <input type="number" class="form-control" id="tr" name="tr" 
+            </div>
+            <div class="mb-3">
+                <label for="tr" class="form-label">Tickets Retournés</label>
+                <input type="number" class="form-control" id="tr" name="tr" 
                    value="<?php echo $affectation['tr']; ?>" required>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="total_tickets" class="form-label">Total Tickets</label>
-            <input type="number" class="form-control" id="total_tickets" name="total_tickets" 
+        <div class="row">
+            <div class="mb-3">
+                <label for="total_tickets" class="form-label">Total Tickets</label>
+                <input type="number" class="form-control" id="total_tickets" name="total_tickets" 
                    value="<?php echo $affectation['total_tickets']; ?>" readonly>
-        </div>
-
-        <div class="mb-3">
-            <label for="tv" class="form-label">Tickets Vendus</label>
-            <input type="number" class="form-control" id="tv" name="tv" 
+            </div>
+            <div class="mb-3">
+                <label for="tv" class="form-label">Tickets Vendus</label>
+                 <input type="number" class="form-control" id="tv" name="tv" 
                    value="<?php echo $affectation['tv']; ?>" readonly>
+            </div>
         </div>
-
         <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
         <a href="liste_affectations.php" class="btn btn-secondary">Retour</a>
     </form>
