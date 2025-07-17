@@ -64,23 +64,6 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
                     <span>Tableau de bord</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-                        <!-- Heading -->
-            <div class="sidebar-heading">
-                Tâches
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="gest_stock/index.php">
-                    <i class="bi bi-graph-up-arrow"></i>
-                <span>Gestion de stock</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="controle/index.php">
-                    <i class="bi bi-ticket-perforated"></i>
-                <span>Controle Retour Tickets</span></a>
-            </li>
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Administrateur

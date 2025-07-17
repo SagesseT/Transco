@@ -53,40 +53,89 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="index.php">
-                    <i class="bi bi-speedometer2"></i> <!-- Changed icon -->
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tableau de bord</span></a>
             </li>
 
-            <!-- Nav Item - Registre d'Affectation -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+                        <!-- Heading -->
+            <div class="sidebar-heading">
+                Controle Retour Tickets
+            </div>
             <li class="nav-item">
+                <a class="nav-link" href="gindex.php">
+                    <i class="bi bi-graph-up-arrow"></i>
+                <span>Controle Retour Tickets
+                </span></a>
                 <a class="nav-link" href="affectation.php">
                     <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-                    <span>Registre d'Affectation et de retour tickets</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="affectation.php">
-                    <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-                    <span>Registre d'Affectation et de retour tickets</span></a>
-            </li>
-
-            <!-- Nav Item - Registre d'Affectation -->
-            <li class="nav-item">
+                <span>Registre d'affectation
+                </span></a>
                 <a class="nav-link" href="affectations_list.php">
                     <i class="bi bi-journal-text"></i> <!-- Changed icon -->
-                    <span>Historique d'Affectation et de retour tickets</span></a>
-            </li>
-
-            <!-- Nav Item - Ajouter une affectation -->
-            <li class="nav-item">
+                <span>Historique d'affectation
+                </span></a>
                 <a class="nav-link" href="ajouter_affectation.php">
                     <i class="bi bi-plus-circle"></i> <!-- Changed icon -->
-                    <span>Ajouter une affectation</span></a>
+                <span>Ajouter un affectation
+                </span></a>
+            </li>
+                        <!-- Heading -->
+            <div class="sidebar-heading">
+                Gestion de stock
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="sindex.php">
+                    <i class="bi bi-ticket-perforated"></i>
+                <span>Gestion de stocks</span></a>
+                <a class="nav-link" href="mouvements.php">
+                    <i class="bi bi-arrow-left-right"></i> <!-- Changed icon -->
+                <span>Mouvements</span></a>
+                <a class="nav-link" href="stock.php">
+                    <i class="bi bi-box-seam"></i> <!-- Changed icon -->
+                <span>Inventaire</span></a>
+
+            </li>
+            <div class="sidebar-heading">
+                Administrateur
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-tools"></i>
+                    <span>Eléments de base</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Eléments de base:</h6>
+                        <a class="collapse-item" href="role.php">Rôle</a>
+                        <a class="collapse-item" href="grade.php">Grade</a>
+                        <a class="collapse-item" href="fonction.php">Fonction</a>
+                        <a class="collapse-item" href="services.php">Service</a>
+                        <a class="collapse-item" href="ligne.php">Ligne</a>
+                    </div>
+                </div>
             </li>
 
-            <!-- Nav Item - Deconnection -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Administrateur</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Poste Administrateur:</h6>
+                        <a class="collapse-item" href="utilisateur.php">Utulisateurs</a>
+                        <a class="collapse-item" href="statut.php">Utilisateurs connecter</a>
+                    </div>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="../config/logout.php">
-                    <i class="bi bi-box-arrow-right"></i> <!-- Changed icon -->
+                <i class="bi bi-power"></i>
                     <span>Deconnection</span></a>
             </li>
 

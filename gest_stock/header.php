@@ -57,19 +57,16 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
                     <span>Tableau de bord</span></a>
             </li>
 
-            <!-- Nav Item - Gestion des stocks -->
-            <li class="nav-item">
-                <a class="nav-link" href="stock.php">
-                    <i class="bi bi-box-seam"></i> <!-- Changed icon -->
-                    <span>Gestion des stocks</span></a>
-            </li>
-
             <!-- Nav Item - Mouvements -->
             <li class="nav-item">
                 <a class="nav-link" href="mouvements.php">
                     <i class="bi bi-arrow-left-right"></i> <!-- Changed icon -->
                     <span>Mouvements</span></a>
+                <a class="nav-link" href="stock.php">
+                    <i class="bi bi-box-seam"></i> <!-- Changed icon -->
+                <span>Inventaire</span></a>
             </li>
+            
 
             <!-- Nav Item - Deconnection -->
             <li class="nav-item">

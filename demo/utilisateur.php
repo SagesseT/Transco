@@ -48,7 +48,7 @@ $result = mysqli_query($conn, $query);
 <body>
 
 <div class="container mt-5">
-<a href="../accueil.php" class="btn btn-primary">Accueil</a>
+<a href="index.php" class="btn btn-primary">Accueil</a>
     <div class="row">
         <!-- Formulaire d'ajout/modification -->
         

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 04 mai 2025 à 01:35
+-- Généré le : ven. 27 juin 2025 à 09:38
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -43,16 +43,25 @@ CREATE TABLE IF NOT EXISTS `affectations` (
   PRIMARY KEY (`id`),
   KEY `services_id_service` (`services_id_service`),
   KEY `lignes_id_ligne` (`lignes_id_ligne`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `affectations`
 --
 
 INSERT INTO `affectations` (`id`, `lignes_id_ligne`, `services_id_service`, `fr`, `series`, `num_tickets_donner`, `num_tickets_retour`, `total_tickets`, `tr`, `tv`, `ddate`) VALUES
-(1, 1, 1, 123456, 'A12FE4', 9467909, 9468000, 92, 2, 90, '2025-04-22'),
 (2, 31, 249, 123456, 'A12FE4', 9467909, 9468999, 1091, 50, 1041, '2025-04-23'),
-(3, 31, 219, 123456, 'A12FE4', 9467909, 9468999, 1091, 50, 1041, '2025-04-23');
+(3, 31, 219, 123456, 'A12FE4', 9467909, 9468999, 1091, 50, 1041, '2025-04-23'),
+(4, 31, 213, 1100, '11C', 120097, 122000, 1904, 54, 1850, '2025-06-02'),
+(5, 31, 227, 10, '260', 10, 250, 241, 11, 230, '2025-06-02'),
+(10, 6, 45, 848484, '11C', 50, 1000, 951, 202, 749, '2025-06-04'),
+(11, 16, 113, 848484, 'DD44R', 1, 6000, 6000, 20, 5980, '2025-06-04'),
+(12, 1, 1, 848484, 'GGF', 1, 6000, 5999, 0, 5999, '2025-06-04'),
+(13, 31, 222, 0, 'sss', 100, 10000, 9901, 5, 9896, '2025-06-05'),
+(14, 31, 227, 0, 'e45', 10, 200, 191, 10, 181, '2025-06-08'),
+(15, 9, 63, 848484, 'GGF', 100, 300, 201, 100, 101, '2025-06-04'),
+(16, 10, 69, 848484, 'GGF', 100, 300, 201, 100, 101, '2025-06-04'),
+(17, 1, 1, 0, 'EE', 44, 100, 57, 1, 56, '2025-06-27');
 
 -- --------------------------------------------------------
 
@@ -71,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   `date_deconnexion` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `connexion`
@@ -133,7 +142,62 @@ INSERT INTO `connexion` (`id`, `matricule`, `compte_utilisateur`, `role_id`, `da
 (53, '770051', 'Irtfttamfutu@gmail.com', 'Admin', '2025-04-24 16:05:53', 'Hors ligne', '2025-04-24 18:16:46'),
 (54, '100035', 'gest', 'GS', '2025-04-24 16:19:02', 'Hors ligne', '2025-04-24 18:20:27'),
 (55, '100035', 'gest', 'GS', '2025-04-24 16:30:34', 'Hors ligne', '2025-04-24 18:38:50'),
-(56, '100010', 'test1', 'Admin', '2025-05-04 01:35:24', 'Hors ligne', NULL);
+(56, '100010', 'test1', 'Admin', '2025-05-04 01:35:24', 'Hors ligne', '2025-05-23 06:56:22'),
+(57, '100010', 'test1', 'Admin', '2025-05-23 04:55:29', 'Hors ligne', '2025-05-23 06:56:22'),
+(58, '100035', 'gest', 'GS', '2025-05-23 04:56:31', 'Hors ligne', '2025-06-04 12:39:40'),
+(59, '100035', 'gest', 'GS', '2025-05-23 07:51:23', 'Hors ligne', '2025-06-04 12:39:40'),
+(60, '100010', 'test1', 'Admin', '2025-05-26 13:54:28', 'Hors ligne', '2025-06-04 11:37:53'),
+(61, '100035', 'gest', 'GS', '2025-05-26 14:01:08', 'Hors ligne', '2025-06-04 12:39:40'),
+(62, '100035', 'gest', 'GS', '2025-06-02 06:46:40', 'Hors ligne', '2025-06-04 12:39:40'),
+(63, '100010', 'test1', 'Admin', '2025-06-04 09:35:29', 'Hors ligne', '2025-06-04 11:37:53'),
+(64, '6242', 'controle', 'CAV', '2025-06-04 09:38:05', 'Hors ligne', '2025-06-04 12:14:40'),
+(65, '100035', 'gest', 'GS', '2025-06-04 10:14:48', 'Hors ligne', '2025-06-04 12:39:40'),
+(66, '100010', 'test1', 'Admin', '2025-06-04 10:39:49', 'Hors ligne', '2025-06-04 15:11:27'),
+(67, '100010', 'test1', 'Admin', '2025-06-04 12:15:35', 'Hors ligne', '2025-06-04 15:11:27'),
+(68, '6242', 'controle', 'CAV', '2025-06-04 12:16:44', 'Hors ligne', '2025-06-04 15:12:16'),
+(69, '6242', 'controle', 'CAV', '2025-06-04 13:11:39', 'Hors ligne', '2025-06-04 15:12:16'),
+(70, '100035', 'gest', 'GS', '2025-06-04 13:20:03', 'Hors ligne', '2025-06-04 15:37:43'),
+(71, '100010', 'test1', 'Admin', '2025-06-04 13:46:10', 'Hors ligne', '2025-06-04 15:46:21'),
+(72, '100010', 'test1', 'Admin', '2025-06-04 13:46:57', 'Hors ligne', '2025-06-05 04:30:01'),
+(73, '100010', 'test1', 'Admin', '2025-06-05 02:29:25', 'Hors ligne', '2025-06-05 04:30:01'),
+(74, '6242', 'controle', 'CAV', '2025-06-05 02:30:27', 'Hors ligne', '2025-06-05 04:44:10'),
+(75, '100010', 'test1', 'Admin', '2025-06-05 02:44:20', 'Hors ligne', '2025-06-09 14:17:56'),
+(76, '6242', 'controle', 'CAV', '2025-06-05 02:47:14', 'Hors ligne', '2025-06-27 05:27:10'),
+(77, '100035', 'gest', 'GS', '2025-06-09 09:23:43', 'Hors ligne', '2025-06-09 11:37:08'),
+(78, '100010', 'test1', 'Admin', '2025-06-09 09:24:47', 'Hors ligne', '2025-06-09 14:17:56'),
+(79, '6242', 'controle', 'CAV', '2025-06-09 09:37:39', 'Hors ligne', '2025-06-27 05:27:10'),
+(80, '717171', 'SUP', 'SUP', '2025-06-09 12:18:10', 'Hors ligne', '2025-06-09 14:27:22'),
+(81, '100010', 'test1', 'Admin', '2025-06-09 12:27:58', 'Hors ligne', '2025-06-23 22:02:17'),
+(82, '100035', 'gest', 'GS', '2025-06-12 13:43:06', 'Hors ligne', '2025-06-12 16:43:35'),
+(83, '100035', 'gest', 'GS', '2025-06-12 13:43:25', 'Hors ligne', '2025-06-12 16:43:35'),
+(84, '100010', 'test1', 'Admin', '2025-06-12 14:36:28', 'Hors ligne', '2025-06-23 22:02:17'),
+(85, '100035', 'gest', 'GS', '2025-06-12 14:37:01', 'Hors ligne', '2025-06-12 16:43:35'),
+(86, '100035', 'gest', 'GS', '2025-06-12 14:43:47', 'Hors ligne', '2025-06-26 23:21:04'),
+(87, '100010', 'test1', 'Admin', '2025-06-23 19:53:34', 'Hors ligne', '2025-06-23 22:02:17'),
+(88, '717171', 'SUP', 'SUP', '2025-06-23 20:05:11', 'Hors ligne', '2025-06-23 22:05:57'),
+(89, '100010', 'test1', 'Admin', '2025-06-23 20:06:08', 'Hors ligne', '2025-06-23 23:05:44'),
+(90, '100010', 'test1', 'Admin', '2025-06-23 21:05:53', 'Hors ligne', '2025-06-26 23:20:40'),
+(91, '100010', 'test1', 'Admin', '2025-06-23 22:28:10', 'Hors ligne', '2025-06-26 23:20:40'),
+(92, '100010', 'test1', 'Admin', '2025-06-23 22:42:51', 'Hors ligne', '2025-06-26 23:20:40'),
+(93, '100010', 'test1', 'Admin', '2025-06-26 20:29:54', 'Hors ligne', '2025-06-26 23:20:40'),
+(94, '100035', 'gest', 'GS', '2025-06-26 21:20:52', 'Hors ligne', '2025-06-26 23:21:04'),
+(95, '6242', 'controle', 'CAV', '2025-06-26 21:21:14', 'Hors ligne', '2025-06-27 05:27:10'),
+(96, '100010', 'test1', 'Admin', '2025-06-27 01:55:03', 'Hors ligne', '2025-06-27 06:10:17'),
+(97, '100010', 'test1', 'Admin', '2025-06-27 02:37:10', 'Hors ligne', '2025-06-27 06:10:17'),
+(98, '6242', 'controle', 'CAV', '2025-06-27 03:12:23', 'Hors ligne', '2025-06-27 05:27:10'),
+(99, '100035', 'gest', 'GS', '2025-06-27 03:27:59', 'Hors ligne', '2025-06-27 10:40:35'),
+(100, '101010', 'demo', 'demo', '2025-06-27 04:10:25', 'Hors ligne', '2025-06-27 06:10:51'),
+(101, '101010', 'demo', 'demo', '2025-06-27 04:10:35', 'Hors ligne', '2025-06-27 06:10:51'),
+(102, '100010', 'test1', 'Admin', '2025-06-27 04:11:01', 'Hors ligne', '2025-06-27 06:12:33'),
+(103, '100010', 'test1', 'Admin', '2025-06-27 04:11:30', 'Hors ligne', '2025-06-27 06:12:33'),
+(104, '101010', 'demo', 'demo', '2025-06-27 04:12:40', 'Hors ligne', '2025-06-27 06:13:32'),
+(105, '101010', 'demo', 'demo', '2025-06-27 04:12:47', 'Hors ligne', '2025-06-27 06:13:32'),
+(106, '101010', 'demo', 'demo', '2025-06-27 04:13:40', 'Hors ligne', '2025-06-27 11:05:26'),
+(107, '101010', 'demo', 'demo', '2025-06-27 05:52:49', 'Hors ligne', '2025-06-27 11:05:26'),
+(108, '6242', 'controle', 'CAV', '2025-06-27 08:40:50', 'Hors ligne', '2025-06-27 11:20:00'),
+(109, '101010', 'demo', 'demo', '2025-06-27 09:05:38', 'Hors ligne', NULL),
+(110, '100010', 'test1', 'Admin', '2025-06-27 09:20:04', 'Hors ligne', '2025-06-27 11:26:26'),
+(111, '100011', 'Admin', 'Admin', '2025-06-27 09:26:35', 'Hors ligne', NULL);
 
 -- --------------------------------------------------------
 
@@ -251,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `mouvements` (
   `commentaire` text,
   PRIMARY KEY (`id`),
   KEY `type_document_id` (`type_document_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `mouvements`
@@ -264,7 +328,9 @@ INSERT INTO `mouvements` (`id`, `type_document_id`, `type_mouvement`, `quantite`
 (18, 4, 'sortie', 2, '2025-04-23 04:34:47', 'gest', 'INTER URBAIN', 'PAR LA DEMANDE DU CHEF DE SERVICE INTER URBAIN'),
 (19, 2, 'entree', 10, '2025-04-23 05:35:20', 'gest', 'STOCK', ''),
 (20, 2, 'entree', 7, '2025-04-23 05:38:37', 'gest', 'STOCK', ''),
-(21, 1, 'sortie', 1, '2025-04-23 12:14:41', 'gest', 'STOC', 'CAVA BIEN');
+(21, 1, 'sortie', 1, '2025-04-23 12:14:41', 'gest', 'STOC', 'CAVA BIEN'),
+(22, 1, 'entree', 6, '2025-06-27 10:31:00', 'demo', 'DEPOT 2', ''),
+(23, 1, 'sortie', 2, '2025-06-27 10:33:41', 'demo', 'DEPOT 2', '');
 
 -- --------------------------------------------------------
 
@@ -288,8 +354,10 @@ INSERT INTO `role` (`id`, `role`) VALUES
 ('Autor', 'autorité'),
 ('CAV', 'Contrôle après-vente'),
 ('CSSB', 'Chef de service Suivi billetterie '),
+('demo', 'demo'),
 ('GS', 'Gestion stock'),
 ('Rapro', 'Rapprochement'),
+('SUP', 'Superviseur'),
 ('Vue', 'Visiteur');
 
 -- --------------------------------------------------------
@@ -575,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `emplacement` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `type_document_id` (`type_document_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `stock`
@@ -583,7 +651,9 @@ CREATE TABLE IF NOT EXISTS `stock` (
 
 INSERT INTO `stock` (`id`, `type_document_id`, `quantite`, `date_entree`, `reference`, `emplacement`) VALUES
 (2, 1, 45, '2025-04-23 04:27:49', 'NORMAL', 'Entrée par gest'),
-(6, 2, 7, '2025-04-23 05:38:37', 'NORMAL', 'Entrée par gest');
+(6, 2, 7, '2025-04-23 05:38:37', 'NORMAL', 'Entrée par gest'),
+(8, 1, 6, '2025-06-27 10:30:22', 'FF', 'Entrée par demo'),
+(9, 1, -2, '2025-06-27 10:33:41', 'FF', 'Sortie vers DEPOT 2');
 
 -- --------------------------------------------------------
 
@@ -673,17 +743,17 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   KEY `fonction_id` (`fonction_id`),
   KEY `grade_id` (`grade_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`num`, `matricule`, `nom`, `postnom`, `prenom`, `compte_utilisateur`, `mot_de_passe`, `fonction_id`, `grade_id`, `role_id`, `date`) VALUES
-(10, 100010, 'test1', 'test1', 'test1', 'test1', '$2y$10$.8//hp9maf/YKWYssJEXVu.FUO3sf6Ll3ZpSegB6IkuDpURFK3JFq', 'CSI', 'C7', 'Admin', '2025-03-23 14:10:35'),
-(15, 100012, 'tata', 'tata', 'tata', 'tata', '$2y$10$BPqgDRyFlgS/vbKnDTtF9e5PXnBov.4DZM7GzHo6PNg7rEKuDMYF6', 'CSI', 'CBSB', 'Admin', '2025-04-01 08:10:53'),
 (16, 100035, 'GEST', 'GEST', 'GEST', 'gest', '$2y$10$GWB2jcBuG2Nze7NmNKVLguLQr/NFYmijg0FiRbh1IQcgBO6KdplFu', 'CSI', 'C7', 'GS', '2025-04-03 04:32:49'),
-(17, 776544, 'MANGA', 'MANGA', 'MANGA', 'manga', '$2y$10$o/A9GYiXABH4.SF7mwOkxeKoFSigNDyrUicioWsyKNQREEqqDgN5K', 'CSIA', 'CSSB', 'GS', '2025-04-17 22:01:40');
+(19, 717171, 'SUP', 'SUP', 'SUP', 'SUP', '$2y$10$Q1e.y70/L4xPqBwtGVxjVe4Ce4QyCdmagnqfnz.aWwi47mHM3H4Be', 'CSIA', 'CSSB', 'SUP', '2025-06-09 12:16:36'),
+(20, 101010, 'demo', 'demo', 'demo', 'demo', '$2y$10$42op47CrWQ0LpM24fCgTwu5i.x59/dfYt5Rao2RT7.dHA32IXM1Ra', 'CSI', 'CC4', 'demo', '2025-06-27 04:07:35'),
+(21, 100011, 'Admin', 'Admin', 'Admin', 'Admin', '$2y$10$X5LFZhyFrDLzmqDYA.jD4O6EonrfqBg3K9Xfp6vCkeQ64pLrcSkdO', 'CSIA', 'C7', 'Admin', '2025-06-27 09:25:01');
 
 --
 -- Contraintes pour les tables déchargées
