@@ -99,6 +99,7 @@ $fonctions_result = mysqli_query($conn, $fonctions_query);
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon">
     <title>Gestion des Fonctions</title>
 </head>
 <body>

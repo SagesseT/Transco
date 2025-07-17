@@ -103,6 +103,7 @@ $ligne_result = mysqli_query($conn, $ligne_query);
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css"></head>
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon">
 <body>
 
 <div class="container mt-5">

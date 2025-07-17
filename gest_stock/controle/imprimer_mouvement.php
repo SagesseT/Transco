@@ -28,6 +28,7 @@ $result = mysqli_query($conn, $sql);
     <link href="../vendor/aos/aos.css" rel="stylesheet">
     <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon">
 </head>
 <body onload="window.print()">
 

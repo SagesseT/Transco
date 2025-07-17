@@ -102,7 +102,8 @@ $ligne_result = mysqli_query($conn, $ligne_query);
     <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css"></head>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon"></head>
 <body>
 
 <div class="container mt-5">

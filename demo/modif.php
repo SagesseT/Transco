@@ -81,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="../vendor/aos/aos.css" rel="stylesheet">
     <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon">
     
 <div class="container mt-5">
     <div class="card shadow-lg border-0 rounded-lg">

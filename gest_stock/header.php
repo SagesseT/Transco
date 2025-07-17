@@ -27,7 +27,7 @@ $role_id = isset($_SESSION["role_id"]) ? $_SESSION["role_id"] : null;
     <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="../vendor/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    
+    <link rel="shortcut icon" href="../img/transco.png" type="image/x-icon">
     <title>TRANSCO - SUIVI BILLETTERIE</title>
 
 </head>
